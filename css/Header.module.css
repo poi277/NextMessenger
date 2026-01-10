@@ -1,0 +1,293 @@
+/* 헤더 전체 */
+.header {
+  display: flex;
+  /* width: 1920px; */
+  height: 60px;
+  padding: 0 20px;
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #AAA;
+  background: #FFF;
+  position: sticky;
+  top: 0;
+  z-index: 13000; /* 이 줄을 추가하세요 */
+  /* box-sizing: border-box; */
+}
+
+.Frame12{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1 0 0;
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  width: 445px;
+  align-items: center;
+  gap: 10px;
+  color: #111;
+  font-family: "Young Serif";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.logo strong {
+  font-weight: 700;
+}
+
+/* 검색 영역 */
+.search {
+  display: flex;
+  width: 910px;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative; /*검색창 뜨게할려면 추가 */
+}
+
+.Frame8 {
+  display: flex;
+  padding: 8px 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  background: #F8F8F8;
+}
+
+.Frame7{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+}
+.Frame7_1{
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1/1;
+}
+
+.Frame7_2{
+  height: 19px;
+  flex: 1 0 0;
+  color: #777;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 입력 초기화 버튼 (X) */
+.clearButton {
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.clearButton:hover {
+  background-color: #f0f0f0;
+}
+
+/* 검색 결과 */
+.searchResults {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.searchResults div {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.searchResults div:last-child {
+  border-bottom: none;
+}
+
+.searchResults div:hover {
+  background-color: #f8f9fa;
+}
+
+/* 사용자 메뉴 영역 */
+.userMenuWrapper {
+  position: relative;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 글쓰기 버튼 */
+.writeButton {
+  display: flex;
+  width: 74px;
+  height: 35px;
+  padding: 8px 16px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #AAA;
+  background-color: #ffffff;
+  color: #777;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.writeButton:hover {
+  background-color: #f8f9fa;
+  border-color: #cccccc;
+}
+
+/* 로그인 버튼 */
+.loginButton {
+  display: flex;
+  width: 135px;
+  height: 35px;
+  padding: 8px 16px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid #AAA;
+  background-color: #ffffff;
+  color: #777;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  
+}
+.loginButton:hover {
+  background-color: #f8f9fa;
+  border-color: #cccccc;
+  color: #333333;
+  
+}
+
+/* 프로필 이미지 */
+.profileImage {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.profileImage:hover {
+  border-color: #cccccc;
+}
+
+/* 메뉴 팝업 */
+.menuPopup {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 6px 0;
+  min-width: 140px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 메뉴 버튼 */
+.menuButton {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333333;
+  width: 100%;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.menuButton:hover {
+  background-color: #f8f9fa;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+  }
+  
+  .loginButton {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  
+  .writeButton {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+    min-width: 100px;
+  }
+  
+  .searchWrapper {
+    max-width: 200px;
+    margin: 0 8px;
+  }
+  
+  .loginButton {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .writeButton {
+    display: none; /* 모바일에서는 글쓰기 버튼 숨김 */
+  }
+}

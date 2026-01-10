@@ -1,0 +1,90 @@
+.registerFormRowOther {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  margin-bottom: 20px; /* 🔥 댓글과 입력창 사이 간격 */
+}
+.registerRowInputContainerButtonon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.inputButtoncontainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+.inputFieldButtonon {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #AAA;
+  background: #FFF;
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.registerMiddleButton {
+  cursor: pointer;
+  display: flex;
+  width: 120px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #AAA;
+  background: #000;
+  color: #FFF;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: background-color 0.2s;
+  min-width: 120px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.inputLabel {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.inputLabel::placeholder {
+  color: #AAA;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inputLabel:focus {
+  outline: none;
+}
+
+.inputLabel:disabled {
+  color: #999;
+  background: transparent;
+  cursor: not-allowed;
+}

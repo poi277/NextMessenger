@@ -1,0 +1,27 @@
+/* 수정/삭제 버튼 */
+.postOwnerActions {
+  display: flex;
+  gap: 24px;
+}
+
+.editBtn{
+  border-radius: 20px;
+  border: none;
+  background: transparent;      /* 배경 없앰 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;             /* 그림자 제거 */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.deleteBtn {
+  background-color: transparent;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+

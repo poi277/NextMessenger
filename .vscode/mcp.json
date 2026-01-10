@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "tosspayments-integration-guide": {
+      "command": "npx",
+      "args": ["-y", "@tosspayments/integration-guide-mcp@latest"]
+    }
+  }
+}

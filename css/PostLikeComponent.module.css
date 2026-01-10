@@ -1,0 +1,84 @@
+.on {
+  display: none;
+}
+
+/* 글쓰기 버튼 스타일에 맞춘 버전 */
+.likeButton {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  height: 34px;
+  width: 114px;
+  border-radius: 11px;
+  background-color: #ffffff; /* 기존 #1d1d1d → 흰색 */
+  border: 1px solid #AAA;   /* 글쓰기 버튼과 동일 */
+  overflow: hidden;
+}
+
+/* 왼쪽 영역 */
+.like {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* 좋아요 아이콘 */
+.likeIcon {
+  fill: #777; /* 글쓰기 버튼 텍스트 색상 계열 */
+  height: 20px;
+  width: 20px;
+}
+
+/* 텍스트 */
+.likeText {
+  color: #777;
+  font-size: 11px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 우측 카운트 영역 */
+.likeCount {
+  position: absolute;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777; /* 글쓰기 버튼 톤 */
+  font-size: 11px;
+  border-left: 1px solid #AAA;  /* 기존보다 밝게 */
+  transition: all 0.5s ease-out;
+}
+
+.likeCount.two {
+  transform: translateY(28px);
+}
+
+/* 체크 시 */
+.on:checked ~ .like .likeIcon {
+  fill: #fc4e4e;
+  animation: enlarge 0.2s ease-out 1;
+  transition: all 0.2s ease-out;
+}
+
+.on:checked ~ .likeCount.two {
+  transform: translateX(0);
+  color: #333; /* 어두운 글자 */
+}
+
+.on:checked ~ .likeCount.one {
+  transform: translateY(-28px);
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}

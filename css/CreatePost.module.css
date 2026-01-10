@@ -1,0 +1,196 @@
+.form {
+  display: contents; /* 또는 flex, grid 등 */
+  margin: 0;
+  padding: 0;
+}
+.writeWrapper {
+  display: flex;
+  padding: 40px 20px;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f8f8f8;
+  min-height: 100vh;
+}
+
+.writeContainer {
+  display: flex;
+  width: 100%;
+  max-width: 680px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.writeCard {
+  display: flex;
+  width: 100%;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.writeCardTitle {
+  color: #333;
+  font-family: Pretendard, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  align-self: center;
+}
+
+.writeFormGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.writeLabel {
+  color: #777;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.writeInputBox {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background: #fff;
+}
+
+.writeInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.writeTextarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  resize: none;
+  min-height: 200px;
+  line-height: 1.5;
+}
+
+.writeSelectBox {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.writeFileUpload {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.writeFileLabel {
+  display: inline-flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px dashed #aaa;
+  background: #fff;
+  color: #777;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.writeFilePreviewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+.writeFilePreview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.writeFilePreviewImgWrapper {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.writeFilePreviewImgWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.writeFilePreviewBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.writeFilePreviewText {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  word-break: break-all;
+  margin: 0;
+}
+
+.writeUploading {
+  padding: 12px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.writeUploading p {
+  margin: 0;
+  color: #1976d2;
+  font-size: 14px;
+}
+
+.writeSubmitBtn {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  align-self: center;
+  min-width: 200px;
+}
+
+.writeSubmitBtnDisabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

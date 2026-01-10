@@ -1,0 +1,74 @@
+.registerFormRowOther {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.registerRowInputContainerButtonon {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-self: stretch;
+}
+
+.inputButtoncontainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  max-width: 800px; /* 전체 폭 줄임 */
+  box-sizing: border-box;
+}
+
+.inputFieldButtonon {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px; /* 패딩 줄임 */
+  border-radius: 6px;
+  border: 1px solid #AAA;
+  background: #FFF;
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  font-size: 12px; /* 글자 크기 줄임 */
+}
+
+.registerMiddleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 80px; /* 버튼 크기 줄임 */
+  min-width: 80px;
+  padding: 6px 10px; /* 패딩 줄임 */
+  border-radius: 6px;
+  border: 1px solid #AAA;
+  background: #000;
+  color: #FFF;
+  font: 600 12px/normal Pretendard; /* 글자 크기 줄임 */
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.inputLabel {
+  flex: 1;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font: 400 12px/normal Pretendard; /* 글자 크기 줄임 */
+  padding: 0;
+  margin: 0;
+}
+
+.inputLabel::placeholder {
+  color: #AAA;
+}
+
+.inputLabel:disabled {
+  color: #999;
+  cursor: not-allowed;
+}

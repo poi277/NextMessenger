@@ -1,0 +1,147 @@
+/* Receipt.module.css */
+.receiptPage {
+  min-height: 100vh;
+  background: #f8f8f8;
+  padding: 40px 20px;
+}
+
+.receiptContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.receiptHeader {
+  margin-bottom: 24px;
+}
+
+.receiptTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 8px 0;
+}
+
+.orderDate {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.emptyReceipt {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  padding: 60px 0;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.receiptCard {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section {
+  padding: 24px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-size: 14px;
+  color: #666;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  word-break: break-all;
+  text-align: right;
+  max-width: 60%;
+}
+
+.orderItemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.orderItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 6px 0;
+}
+
+.itemQuantity {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.itemPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.totalLabel {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+.totalAmount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4169e1;
+}

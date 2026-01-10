@@ -1,0 +1,287 @@
+/* feed 레이아웃 */
+.feedWrapper { 
+  display: flex;
+  padding: 40px 500px 0 0;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+  background: #F8F8F8;
+  min-height: 100vh;
+}
+
+.feedContainer {
+  display: flex;
+  width: 920px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* 게시물 카드 */
+.postCard {   
+  display: flex;
+  width: 680px;
+  padding: 20px 120px 16px 120px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 16px;
+  border: 1px solid #DDD;
+  background: #FFF;
+  cursor: pointer;
+}
+
+.postCard:last-child { border-bottom: none; }
+
+/* 게시글 헤더 */
+.postHeader {   
+  display: flex;   
+  align-items: center;   
+  gap: 12px;   
+  padding: 0 16px 12px 16px; 
+}
+
+.profilePic {   
+  width: 32px;   
+  height: 32px;   
+  border-radius: 50%;   
+  background: #ccc;   
+  display: flex;   
+  align-items: center;   
+  justify-content: center;   
+  font-weight: bold;   
+  overflow: hidden; 
+}
+
+.profilePic img {   
+  width: 100%;   
+  height: 100%;   
+  object-fit: cover; 
+}
+
+.postUserInfo {   
+  display: flex;   
+  flex-direction: row;   
+  align-items: center;   
+  gap: 8px; 
+}
+
+.username {   
+  font-weight: bold;   
+  font-size: 14px;   
+  color: #000; 
+}
+
+.postTime {   
+  font-size: 12px;   
+  color: #888; 
+}
+
+/* 게시글 내용 */
+.postContent {   
+  padding: 0 16px 12px 16px;   
+  text-align: left;   
+  color: #000;   
+  font-size: 14px;   
+  line-height: 1.4;   
+  margin-bottom: 12px; 
+}
+
+/* 게시글 이미지 */
+.postImageWrapper {
+  position: relative;
+  width: 100%;
+  background: black;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.postImageSingle {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 게시글 액션 버튼 */
+.actionBtn {   
+  font-size: 20px;   
+  border: none;   
+  background: none;   
+  cursor: pointer;   
+  padding: 4px; 
+}
+
+.postActions {   
+  display: flex;   
+  width: 100%; 
+  justify-content: space-between;   
+  align-items: center;   
+  padding: 0 16px;   
+  font-size: 14px;   
+  color: #8e8e8e; 
+}
+
+.postActionsLeft {   
+  display: flex;   
+  align-items: center;   
+  gap: 8px;   
+  white-space: nowrap; 
+}
+
+.postActionsRight {   
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.likesCount {   
+  font-weight: bold;   
+  color: #000;   
+  font-size: 14px; 
+}
+
+/* 이미지 네비게이션 버튼 */
+.photoNavBtn {   
+  position: absolute;   
+  top: 50%;   
+  transform: translateY(-50%);   
+  background: rgba(0,0,0,0.4);   
+  border: none;   
+  color: white;   
+  font-size: 20px;   
+  padding: 8px;   
+  border-radius: 50%;   
+  cursor: pointer;   
+  z-index: 10; 
+}   
+
+.photoNavBtn.left { left: 10px; } 
+.photoNavBtn.right { right: 10px; }  
+
+/* 이미지 하단 인디케이터 */
+.photoIndicators {   
+  position: absolute;   
+  bottom: 8px;   
+  left: 50%;   
+  transform: translateX(-50%);   
+  display: flex;   
+  gap: 6px;   
+  z-index: 10; 
+}
+
+.indicatorDot {   
+  width: 8px;   
+  height: 8px;   
+  border-radius: 50%;   
+  background: #ccc;   
+  transition: background 0.3s ease; 
+}  
+
+.indicatorDot.active {   
+  background: #0095f6; 
+}  
+/* 게시글 + 댓글 wrapper */
+.postAndComments {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.detailPostUserInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detailActionBtn {
+  font-size: 18px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+.editBtn, .deleteBtn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.editBtn { background-color: #007bff; }
+.deleteBtn { background-color: red; }
+
+/* 댓글 영역 */
+.commentMainRow {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.commentSubRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.commentButtons {
+  display: flex;
+  gap: 6px;
+}
+
+.commentButtons button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.commentButtonsDeleteBtn { color: red; }
+
+.commentItem {
+  margin-left: var(--depth, 0px);
+}
+
+.commentCount {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+}
+
+/* 댓글 입력창 */
+.commentInputWrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.commentInputWrapperInput {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.commentInputWrapperButton {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.commentSection {
+  padding: 12px 16px;
+  background: transparent;
+}

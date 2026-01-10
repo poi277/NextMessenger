@@ -1,0 +1,65 @@
+.profileSidebar {
+    display: flex;
+    width: 440px;
+    height: 984px;
+    padding: 80px 0 20px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 63px;
+    flex-shrink: 0;
+    background: #FFF;
+    border-right: 1px solid #DDD;
+    
+    position: fixed;  /* ← sticky 대신 fixed */
+    right: 1460px;      /* 화면 오른쪽 여백 */
+    top: 60px;        /* 원하는 만큼 위에서 떨어뜨림 */
+    z-index: 12000;
+}
+
+.profilePhoto {
+    width: 175px;
+    height: 175px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    border-radius: 175px;
+}
+
+.profileContainer {
+    display: flex;
+    padding: 0 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.profileContainerName {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.profileContainerPost {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.profileContainerIntroduction {
+    height: 114px;
+    overflow: hidden;
+    color: #9E9E9E;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
