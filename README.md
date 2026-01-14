@@ -14,10 +14,10 @@ WebSocket과 Kafka를 사용해 실시간 통신과 메시지 처리를 구현�
 ```
 
 ## 문서
-[문서 보기](https://docs.google.com/document/d/1M_G3FHIk6NpHwyYIl82IZdLAtDYcBi279za9k6WdcBY/edit?usp=sharing)
-[문서 다운로드 (PDF)](https://docs.google.com/document/d/1M_G3FHIk6NpHwyYIl82IZdLAtDYcBi279za9k6WdcBY/export?format=pdf)
-[전체 아키텍쳐](https://app.diagrams.net/#G1n_Rc_uEXv_IbFuX16B06a6ol-zMJnWhB#%7B%22pageId%22%3A%2200Ljtffs7QVa-bqysv2e%22%7D)
-[데이터베이스 ERD](https://dbdiagram.io/d/6956305a39fa3db27be84719)
+- [보고서 보기](https://docs.google.com/document/d/1M_G3FHIk6NpHwyYIl82IZdLAtDYcBi279za9k6WdcBY/edit?usp=sharing)
+- [보고서 다운로드 (PDF)](https://docs.google.com/document/d/1M_G3FHIk6NpHwyYIl82IZdLAtDYcBi279za9k6WdcBY/export?format=pdf)
+- [전체 아키텍쳐](https://app.diagrams.net/#G1n_Rc_uEXv_IbFuX16B06a6ol-zMJnWhB#%7B%22pageId%22%3A%2200Ljtffs7QVa-bqysv2e%22%7D)
+- [데이터베이스 ERD](https://dbdiagram.io/d/6956305a39fa3db27be84719)
 
 ## 이전 프로젝트의 기능들 
 - SMTP 이메일을 이용한 로그인
