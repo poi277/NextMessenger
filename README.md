@@ -16,7 +16,7 @@ WebSocket과 Kafka를 사용해 실시간 통신과 메시지 처리를 구현�
 ## 문서
 - [보고서 보기](https://docs.google.com/document/d/1M_G3FHIk6NpHwyYIl82IZdLAtDYcBi279za9k6WdcBY/edit?usp=sharing)
 - [보고서 다운로드 (PDF)](https://docs.google.com/document/d/1M_G3FHIk6NpHwyYIl82IZdLAtDYcBi279za9k6WdcBY/export?format=pdf)
-- [전체 아키텍쳐](https://drive.google.com/file/d/1n_Rc_uEXv_IbFuX16B06a6ol-zMJnWhB/view?usp=sharing)
+- [전체 아키텍쳐 (링크속 draw.io로 열기를 눌러주세요)](https://drive.google.com/file/d/1n_Rc_uEXv_IbFuX16B06a6ol-zMJnWhB/view?usp=sharing)
 - [데이터베이스 ERD](https://dbdiagram.io/d/6956305a39fa3db27be84719)
 
 ## 이전 프로젝트의 기능들 
