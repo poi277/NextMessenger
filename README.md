@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReactMessenger
 
-## Getting Started
+React와 Java Spring을 이용한  
+Messenger 프로젝트의 **초기 버전**입니다.  
 
-First, run the development server:
+최신 버전은 **NextMessenger 리포지토리**를 확인해주세요.  
+https://github.com/poi277/NextMessenger
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 프로젝트 구조
+```
+프론트 : MessengerFrontEnd\src\component
+백엔드 : MessengerBackEnd\src\main\java\com\Messenger\Messenger
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 기능
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- SMTP 이메일을 이용한 로그인
+- OAuth2를 이용한 소셜로그인
+- 게시글 및 사진 CRUD
+- 게시물의 범위 설정
+- 댓글 CRUD
+- 친구 시스템
+- 친구와의 채팅
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 사용한 기술스택
 
-## Learn More
+### 프론트
+- HTML
+- CSS
+- JavaScript
+- React.js
 
-To learn more about Next.js, take a look at the following resources:
+### 백엔드
+- Spring Boot
+- Spring Security
+- JPA
+- JWT
+- OAuth2
+- HttpSession
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### DB
+- MySQL
+- Redis
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 인프라 / 배포
+- Docker
+- AWS EC2
+- AWS S3
+- AWS CloudFront
+- AWS RDS
+- AWS Route 53
+- SSL 인증서
