@@ -9,30 +9,31 @@ export default function useChating() {
   const { frienduuid } = useParams();
   const { user, ws } = useAuth();
   const { isConnected, lastMessage, sendMessage } = ws;
-
   const [messages, setMessages] = useState([]);
   const [content, setContent] = useState("");
   const [receiverName, setReceiverName] = useState("");
-  const [receiverOnline, setReceiverOnline] = useState(false);
+  const [receiverObjectId, setReceiverObjectId] = useState(null);
   const [roomId, setRoomId] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [receiverOnline, setReceiverOnline] = useState(false);
   const [error, setError] = useState(null);
-
+  const [onlineUserIds, setOnlineUserIds] = useState([]); // ✅ 직접 관리
   const messagesEndRef = useRef(null);
   const hasJoinedRoom = useRef(false);
-  const currentRoomId = useRef(null); // ✅ ref로 roomId 추적
+  const currentRoomId = useRef(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // ✅ 초기화 - frienduuid만 의존성으로
+  // ✅ 초기화
   useEffect(() => {
     if (!frienduuid) return;
     
     hasJoinedRoom.current = false;
     setMessages([]);
     setRoomId(null);
+    setReceiverOnline(false);
     currentRoomId.current = null;
     
     const init = async () => {
@@ -41,13 +42,16 @@ export default function useChating() {
         setError(null);
         
         const receiverRes = await GetReceiverHandler(frienduuid);
+        console.log(receiverRes);
+        
         if (!receiverRes.success) {
           setError(receiverRes.message);
           setLoading(false);
           return;
         }
+        
         setReceiverName(receiverRes.data.receiverName);
-        setReceiverOnline(receiverRes.data.receiverOnline);
+        setReceiverObjectId(receiverRes.data.receiverObjectId);
         
         const chatRes = await GetOnetoOneChatHandler(frienduuid);
         if (!chatRes.success) {
@@ -62,11 +66,12 @@ export default function useChating() {
 
         setMessages(chatMessages);  
         setRoomId(chatRes.data.roomId);
-        currentRoomId.current = chatRes.data.roomId; // ✅ ref 업데이트
+        currentRoomId.current = chatRes.data.roomId;
         
         console.log('✅ 채팅 초기화 완료:', {
           roomId: chatRes.data.roomId,
-          messageCount: chatMessages.length
+          messageCount: chatMessages.length,
+          receiverObjectId: receiverRes.data.receiverObjectId
         });
       } catch (err) {
         console.error('초기화 오류:', err);
@@ -78,7 +83,6 @@ export default function useChating() {
 
     init();
     
-    // ✅ cleanup - ref 사용으로 의존성 제거
     return () => {
       const roomToLeave = currentRoomId.current;
       if (roomToLeave && hasJoinedRoom.current) {
@@ -91,7 +95,7 @@ export default function useChating() {
         currentRoomId.current = null;
       }
     };
-  }, [frienduuid]); // ✅ frienduuid만!
+  }, [frienduuid]);
 
   // ✅ 방 참여
   useEffect(() => {
@@ -105,11 +109,11 @@ export default function useChating() {
       roomId,
     });
     hasJoinedRoom.current = true;
-  }, [isConnected, roomId]); // ✅ sendMessage 제거
+  }, [isConnected, roomId]);
   
-  // ✅ 메시지 수신
+  // ✅ WebSocket 메시지 수신
   useEffect(() => {
-    if (!lastMessage || !roomId) return;
+    if (!lastMessage) return;
 
     switch (lastMessage.type) {
       case 'new-message':
@@ -129,6 +133,36 @@ export default function useChating() {
       case 'left-room':
         console.log('🚪 방 떠남 확인:', lastMessage.roomId);
         break;
+        
+      // ✅ 온라인 유저 목록 업데이트
+      case 'online-users':
+        console.log('📡 온라인 유저 목록:', lastMessage.users);
+        setOnlineUserIds(Array.isArray(lastMessage.users) ? lastMessage.users : []);
+        break;
+        
+      // ✅ 유저 접속
+      case 'user-connected':
+        console.log('👤 유저 접속:', lastMessage.userId);
+        setOnlineUserIds(prev => {
+          if (!prev.includes(lastMessage.userId)) {
+            return [...prev, lastMessage.userId];
+          }
+          return prev;
+        });
+        break;
+        
+      // ✅ 유저 퇴장
+      case 'user-disconnected':
+        console.log('👤 유저 퇴장:', lastMessage.userId);
+        setOnlineUserIds(prev => 
+          prev.filter(id => id !== lastMessage.userId)
+        );
+        break;
+
+      case 'connected':
+        console.log('✅ WebSocket 연결 완료');
+        sendMessage({ type: 'get-online-users' });
+        break;
 
       case 'error':
         console.error('❌ WebSocket 에러:', lastMessage.message);
@@ -139,7 +173,37 @@ export default function useChating() {
         console.log('📨 알 수 없는 메시지:', lastMessage.type);
         break;
     }
-  }, [lastMessage, roomId]);
+  }, [lastMessage, roomId, sendMessage]);
+
+  // ✅ 수신자 온라인 상태 업데이트
+  useEffect(() => {
+    if (!receiverObjectId || !Array.isArray(onlineUserIds)) {
+      setReceiverOnline(false);
+      return;
+    }
+
+    const isOnline = onlineUserIds.includes(receiverObjectId);
+    setReceiverOnline(isOnline);
+    
+    console.log('👤 수신자 온라인 상태:', {
+      receiverObjectId,
+      isOnline,
+      onlineUserIds
+    });
+  }, [onlineUserIds, receiverObjectId]);
+
+  // ✅ 웹소켓 연결 끊김 시 오프라인 처리
+  useEffect(() => {
+    if (!isConnected) {
+      setOnlineUserIds([]);
+      setReceiverOnline(false);
+      console.log('🔌 웹소켓 연결 끊김 - 모든 유저 오프라인 처리');
+    } else {
+      // 재연결 시 온라인 유저 목록 요청
+      console.log('🔄 웹소켓 재연결 - 온라인 유저 요청');
+      sendMessage({ type: 'get-online-users' });
+    }
+  }, [isConnected, sendMessage]);
 
   const postMessage = useCallback(() => {
     if (!content.trim() || !isConnected || !roomId) {
@@ -171,12 +235,12 @@ export default function useChating() {
     setContent,
     user,
     receiverName,
-    receiverOnline,
     loading,
     error,
     isConnected,
     messagesEndRef,
     postMessage,
     handleKeyPress,
+    receiverOnline,
   };
 }

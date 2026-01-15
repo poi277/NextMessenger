@@ -298,6 +298,7 @@ router.get("/:receiveruuid", authMiddleware, async (req, res) => {
 
     res.json({
       receiverName: user.name,
+      receiverObjectId: user._id.toString(),
       receiveronline: user.online ?? false,
       profileImage: user.profileImage?.url ?? "",
     });
