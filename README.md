@@ -58,8 +58,4 @@ WebSocket과 Kafka를 사용해 실시간 통신과 메시지 처리를 구현�
 - MongoDB
 - PostgreSQL
 - Redis
-
-### 인프라 / 배포
-- Docker
-
-- - <img width="1899" height="953" alt="image" src="https://github.com/user-attachments/assets/ce755070-1e28-43e0-a23b-728fe18583df" />
+t="image" src="https://github.com/user-attachments/assets/ce755070-1e28-43e0-a23b-728fe18583df" />
