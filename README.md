@@ -5,13 +5,13 @@ ReactMessenger 프로젝트의 확장 버전으로,
 WebSocket과 Kafka를 사용해 실시간 통신과 메시지 처리를 구현했으며, 
 쇼핑 및 결제 시스템을 도입하여 분산 시스템과 결제 흐름 설계에 중점을 두었습니다.
 
-## 프로젝트 구조
+## 프로젝트 메인 기능 구조
 ```
 프론트 : NextMessenger\MessengerFrontend\
 백엔드 : NextMessenger\MessengerBackend\
 결제백엔드 : NextMessenger\pay-ment-backend\
-메인 기능은 각 프로젝트의 src 파일 안에 있습니다.
 ```
+주요기능은 src파일, 소셜백엔드는 routers안에 있습니다.
 
 ## 문서
 - [보고서 보기](https://docs.google.com/document/d/1M_G3FHIk6NpHwyYIl82IZdLAtDYcBi279za9k6WdcBY/edit?usp=sharing)
