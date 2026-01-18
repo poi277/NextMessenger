@@ -13,7 +13,7 @@ WebSocket과 Kafka를 사용해 실시간 통신과 메시지 처리를 구현�
 ```
 주요기능은 src파일, 소셜백엔드는 routers안에 있습니다.
 
-## 문서
+## 문서(Ctrl +a 로 새 창 권유)
 - [보고서 보기](https://www.notion.so/Messenger-v2-2ebdd7853a8e8098bb47ce9fed3baa2f?source=copy_link)
 - [전체 아키텍쳐 (링크속 draw.io로 열기를 눌러주세요)](https://drive.google.com/file/d/1n_Rc_uEXv_IbFuX16B06a6ol-zMJnWhB/view?usp=sharing)
 - [데이터베이스 ERD](https://dbdiagram.io/d/6956305a39fa3db27be84719)
